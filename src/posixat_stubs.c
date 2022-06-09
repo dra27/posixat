@@ -118,12 +118,7 @@ static int file_kind_table[] = {
   S_IFSOCK
 };
 
-#if OCAML_VERSION_MAJOR >= 5
 extern value unix_cst_to_constr(int n, int * tbl, int size, int deflt);
-#else
-extern value cst_to_constr(int n, int * tbl, int size, int deflt);
-#define unix_cst_to_constr cst_to_constr
-#endif
 
 static value alloc_stats(struct stat *buf)
 {
